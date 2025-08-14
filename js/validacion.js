@@ -31,27 +31,27 @@ document.getElementById("regBtn").addEventListener("click", function() {
 //Solucion 2
 //Validacion con true y false.
 //Ningun campo vacio
-let camposVacios = false;
+let camposVacios = true;
 if (!nombre || !apellido || !email || !password1 || !password2) {
-    camposVacios = true;
+    camposVacios = false;
 }
 //Contraseñas diferentes.
-let contraseniasDiferentes = false;
+let contraseniasDiferentes = true;
 if (password1 !== password2) {
-    contraseniasDiferentes = true;
+    contraseniasDiferentes = false;
 }
 //Caracteres contraseñas.
-let contraseniaCorta = false;
+let contraseniaCorta = true;
 if (password1.length() >= 6) {
-    contraseniaCorta = true;
+    contraseniaCorta = false;
 }
 //Terminos aceptados.
-let terminosAceptados = false;
+let terminosNoAceptados = true;
 if (!terminos) {
-    terminosAceptados = true;
+    terminosNoAceptados = false;
 }
 //Validacion.
-if (camposVacios == true || contraseniasDiferentes == true || contraseniaCorta == true || terminosAceptados == true) {
+if (camposVacios == false || contraseniasDiferentes == false || contraseniaCorta == false || terminosNoAceptados == false) {
     showAlertSuccess();
 } else {
     showAlertError();
